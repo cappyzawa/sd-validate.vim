@@ -18,5 +18,11 @@ augroup sd_validate
   autocmd BufWritePost *sd-template.yaml call sd_validate#validate('template')
 augroup END
 
+if !exists('g:sd_validate_disable_auto')
+  augroup sd_validate
+    autocmd!
+  augroup END
+endif
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
