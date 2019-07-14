@@ -11,6 +11,7 @@ set cpo&vim
 
 command! -bar SDValidatePipeline call sd_validate#validate('pipeline')
 command! -bar SDValidateTemplate call sd_validate#validate('template')
+command! -bar SDValidatePipelineOutput call sd_validate#validate_output()
 
 augroup sd_validate
   autocmd!

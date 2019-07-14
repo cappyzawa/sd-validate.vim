@@ -11,11 +11,18 @@ function! s:validate(type) abort
   elseif a:type ==# 'template'
     let l:sub_command = 'validate-template'
   endif
-  return l:cmd.run(l:sub_command, expand('%'))
+  return l:cmd.run(l:sub_command, '-f', expand('%'))
 endfunction
 
 function! sd_validate#validate(type) abort
   echo s:validate(a:type)
+endfunction
+
+function! sd_validate#validate_output() abort
+  let l:cmd = sd_validate#cmd#new()
+  let l:sub_command = ''
+  let l:validated = l:cmd.run(l:sub_command, '-f', expand('%'), '--output')
+  call sd_validate#window#open(l:validated)
 endfunction
 
 let &cpo = s:save_cpo
