@@ -5,6 +5,7 @@ function! sd_validate#window#open(validated) abort
   vnew
   wincmd l
   call setline(1, a:validated)
+  substitute/\r/\r/g
   let &filetype='yaml'
   setlocal nomodified
 endfunction
