@@ -19,6 +19,7 @@ Plug 'cappyzawa/sd-validate.vim'
 |:---|:---|
 |ValidatePipeline|validate `screwdriver.yaml`|
 |ValidateTemplate|validate `sd-template.yaml`|
+|ValidatePipelineOutput|display A validated result on vertical window|
 
 The default is to validate each time you save the `screwdriver.yaml` or `sd-template.yaml`.
 
